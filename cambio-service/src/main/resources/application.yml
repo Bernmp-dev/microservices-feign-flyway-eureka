@@ -1,0 +1,24 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: cambio-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cambio-service-db?useTimezone=true&serverTimezone=UTC
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    open-in-view: false
+
+  flyway:
+    url: jdbc:mysql://localhost:3306/
+    schemas: cambio-service-db
+    user: root
+    password: root
+    locations: classpath:db/migration
